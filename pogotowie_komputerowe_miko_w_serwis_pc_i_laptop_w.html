@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pogotowie Komputerowe Mikołów – Serwis PC i Laptopów | Pomoc Zdalna</title>
+    <meta name="description" content="Pogotowie Komputerowe Mikołów – Serwis PC i Laptopów. Naprawa komputerów wieczorami, w weekendy i zdalnie bez dopłat. Zadzwoń: 512 074 258. Mikołów, Katowice, Tychy, Gliwice i cały Śląsk.">
+    
+    <!-- Czcionka Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#0f172a] text-slate-200 font-sans antialiased pb-24 md:pb-0 selection:bg-orange-500 selection:text-white">
+
+    <!-- =====================================================================
+         1. STICKY PASEK NAWIGACJI
+    ====================================================================== -->
+    <header class="sticky top-0 z-40 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800 shadow-lg shadow-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20 gap-3">
+                
+                <!-- Logo i nazwa serwisu -->
+                <a href="#" class="flex items-center gap-3 group min-w-0">
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#1e293b] border border-slate-700 flex items-center justify-center shrink-0 group-hover:border-orange-500/60 transition-colors">
+                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div class="truncate">
+                        <span data-config="short-name" class="block font-extrabold text-white text-sm sm:text-base lg:text-lg leading-tight truncate">Pogotowie Komputerowe Mikołów</span>
+                        <span data-config="subtitle" class="block text-xs font-medium text-amber-400 truncate">Serwis PC i Laptopów • Pomoc Zdalna</span>
+                    </div>
+                </a>
+
+                <!-- Linki nawigacyjne (Desktop) -->
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-300">
+                    <a href="#dlaczego-warto" class="hover:text-orange-400 transition-colors">Dlaczego warto</a>
+                    <a href="#pomoc-zdalna" class="hover:text-orange-400 transition-colors">Pomoc zdalna</a>
+                    <a href="#cennik" class="hover:text-orange-400 transition-colors">Cennik</a>
+                    <a href="#kalkulator" class="hover:text-orange-400 transition-colors">Szybka wycena</a>
+                    <a href="#godziny-dojazd" class="hover:text-orange-400 transition-colors">Godziny i dojazd</a>
+                </nav>
+
+                <!-- Przycisk połączenia + menu mobilne -->
+                <div class="flex items-center gap-2 shrink-0">
+                    <a data-config="phone-link" href="tel:+48512074258" class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 active:scale-[0.98] text-slate-950 font-extrabold text-xs sm:text-sm lg:text-base px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-xl shadow-lg shadow-orange-500/20 transition-all">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <span data-config="phone-display">512 074 258</span>
+                    </a>
+
+                    <button id="mobile-menu-btn" type="button" aria-label="Otwórz menu" class="lg:hidden p-2.5 rounded-xl bg-[#1e293b] text-slate-200 hover:text-white border border-slate-700 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rozwijane menu mobilne -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#1e293b] border-t border-slate-700/80 px-4 pt-3 pb-5 space-y-1.5 shadow-2xl">
+            <a href="#dlaczego-warto" class="mobile-nav-link block px-3.5 py-2.5 rounded-xl font-semibold text-slate-200 hover:bg-slate-800 hover:text-orange-400">Dlaczego warto</a>
+            <a href="#pomoc-zdalna" class="mobile-nav-link block px-3.5 py-2.5 rounded-xl font-semibold text-slate-200 hover:bg-slate-800 hover:text-orange-400">Pomoc zdalna w 4 krokach</a>
+            <a href="#cennik" class="mobile-nav-link block px-3.5 py-2.5 rounded-xl font-semibold text-slate-200 hover:bg-slate-800 hover:text-orange-400">Cennik usług</a>
+            <a href="#kalkulator" class="mobile-nav-link block px-3.5 py-2.5 rounded-xl font-semibold text-slate-200 hover:bg-slate-800 hover:text-orange-400">Kalkulator zgłoszenia (SMS / WhatsApp)</a>
+            <a href="#godziny-dojazd" class="mobile-nav-link block px-3.5 py-2.5 rounded-xl font-semibold text-slate-200 hover:bg-slate-800 hover:text-orange-400">Opinie Google, godziny i dojazd</a>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         2. SEKCJA HERO (Z LIVE STATUS INDICATOR)
+    ====================================================================== -->
+    <section class="relative overflow-hidden border-b border-slate-800/80">
+        <!-- Subtelne tło z poświatą -->
+        <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(#f97316 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div class="absolute -top-32 right-0 w-[28rem] h-[28rem] bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-32 left-0 w-[28rem] h-[28rem] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Lewa kolumna Hero -->
+                <div class="lg:col-span-7 space-y-6">
+                    
+                    <!-- Pigułka statusu na żywo + Ocena 5.0 Google -->
+                    <div class="flex flex-wrap items-center gap-3">
+                        <div id="live-status-badge" class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1e293b] border border-emerald-500/40 text-xs sm:text-sm font-bold text-white shadow-md">
+                            <span id="live-status-dot" class="relative flex h-3 w-3 shrink-0">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                            </span>
+                            <span id="live-status-text">Dostępny teraz – zadzwoń (512 074 258)</span>
+                        </div>
+
+                        <a data-config="google-reviews-link" href="https://g.page/r/CQN_ZPhkYibGEBM/review" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-bold hover:bg-amber-500/20 transition-colors">
+                            <span>5.0 ★★★★★ w Google</span>
+                        </a>
+                    </div>
+
+                    <!-- Główny nagłówek H1 -->
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
+                        Komputer padł po pracy? <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-emerald-400">Naprawiam wieczorami, w weekendy i zdalnie</span> – bez czekania tygodniami.
+                    </h1>
+
+                    <!-- Podnagłówek podkreślający uczciwe stawki -->
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        Lokalny serwis PC i laptopów w Mikołowie i okolicach. <strong class="text-white">Zero korporacyjnych stawek 250 zł/h</strong> i <strong class="text-amber-300">zero dopłat za pracę wieczorami oraz w soboty i niedziele</strong>. Konkretną wycenę poznajesz przed rozpoczęciem naprawy.
+                    </p>
+
+                    <!-- Dwa główne przyciski CTA -->
+                    <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
+                        <a data-config="phone-link" href="tel:+48512074258" class="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 active:scale-[0.99] text-slate-950 font-extrabold text-base sm:text-lg px-7 py-4 rounded-xl shadow-xl shadow-orange-500/25 transition-all">
+                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span>Zadzwoń: <span data-config="phone-display">512 074 258</span></span>
+                        </a>
+
+                        <a href="#pomoc-zdalna" class="inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 active:scale-[0.99] text-white font-bold text-base sm:text-lg px-7 py-4 rounded-xl shadow-xl shadow-emerald-600/20 transition-all">
+                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <span>Pomoc zdalna 120 zł/h</span>
+                        </a>
+                    </div>
+
+                    <!-- Dodatkowe gwarancje pod CTA -->
+                    <div class="pt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-400">
+                        <span class="flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Diagnoza 0 zł przy naprawie
+                        </span>
+                        <span class="flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Płatność BLIK / gotówka po robocie
+                        </span>
+                        <span class="flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            Dojazd Mikołów 0 zł
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Prawa kolumna Hero: Karta szybkiego kontaktu -->
+                <div class="lg:col-span-5">
+                    <div class="bg-[#1e293b] border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+                        <div class="flex items-start justify-between gap-4 border-b border-slate-700 pb-5">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Bezpośredni kontakt z technikiem</span>
+                                <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-1">Szybka pomoc bez infolinii</h2>
+                                <p class="text-sm text-slate-300 mt-1">Dzwonisz bezpośrednio do serwisanta – od razu ustalamy przyczynę i koszt.</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center shrink-0">
+                                <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center justify-between py-2 px-3.5 rounded-xl bg-[#0f172a]/80 border border-slate-700/60">
+                                <span class="text-slate-400">Poniedziałek – Czwartek</span>
+                                <span class="font-bold text-white">17:00 – 22:00</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2 px-3.5 rounded-xl bg-[#0f172a]/80 border border-slate-700/60">
+                                <span class="text-slate-400">Piątek</span>
+                                <span class="font-bold text-amber-400">14:00 – 22:00</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2 px-3.5 rounded-xl bg-[#0f172a]/80 border border-slate-700/60">
+                                <span class="text-slate-400">Sobota – Niedziela</span>
+                                <span class="font-bold text-emerald-400">08:00 – 22:00</span>
+                            </div>
+                        </div>
+
+                        <!-- Numer z przyciskiem kopiowania + WhatsApp -->
+                        <div class="bg-[#0f172a] rounded-xl p-4 border border-slate-700 space-y-3">
+                            <div class="flex items-center justify-between gap-2">
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Telefon / SMS / WhatsApp / BLIK:</span>
+                                    <a data-config="phone-link" href="tel:+48512074258" class="text-2xl font-extrabold text-white hover:text-orange-400 transition-colors">
+                                        <span data-config="phone-display">512 074 258</span>
+                                    </a>
+                                </div>
+                                <button type="button" onclick="copyPhoneNumber()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-[#1e293b] hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-600 transition-colors">
+                                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                    <span>Kopiuj</span>
+                                </button>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2.5">
+                                <a data-config="whatsapp-link" href="https://wa.me/48512074258" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm py-3 px-3 rounded-xl transition-colors">
+                                    <span>WhatsApp 24/7</span>
+                                </a>
+                                <a href="#kalkulator" class="inline-flex items-center justify-center gap-2 bg-[#1e293b] hover:bg-slate-700 text-amber-300 border border-slate-600 font-bold text-xs sm:text-sm py-3 px-3 rounded-xl transition-colors">
+                                    <span>Wyceń online &rarr;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         3. SEKCJA: DLACZEGO WARTO? (4 KARTY PRZEWAG)
+    ====================================================================== -->
+    <section id="dlaczego-warto" class="py-16 sm:py-20 bg-[#0f172a] border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-400">Uczciwe zasady serwisu</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">Dlaczego warto?</h2>
+                <p class="text-slate-400 mt-3 text-base sm:text-lg">
+                    Konkretna pomoc wtedy, gdy naprawdę jej potrzebujesz – bez ukrytych dopłat i przetrzymywania sprzętu tygodniami.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Karta 1 -->
+                <div class="bg-[#1e293b] rounded-2xl p-6 sm:p-7 border border-slate-700/80 hover:border-orange-500/50 transition-all shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/15 border border-orange-500/30 text-orange-400 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Pracuję po Twoich godzinach pracy</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Pn–Czw 17:00–22:00, Pt 14:00–22:00, Sob–Ndz 08:00–22:00 – <strong class="text-amber-300">bez dopłat wieczornych i weekendowych</strong>.
+                    </p>
+                </div>
+
+                <!-- Karta 2 -->
+                <div class="bg-[#1e293b] rounded-2xl p-6 sm:p-7 border border-slate-700/80 hover:border-emerald-500/50 transition-all shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Jasna wycena przed naprawą</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Najpierw konkretna kwota i Twoja akceptacja – <strong class="text-emerald-400">diagnoza 0 zł przy realizacji usługi</strong>.
+                    </p>
+                </div>
+
+                <!-- Karta 3 -->
+                <div class="bg-[#1e293b] rounded-2xl p-6 sm:p-7 border border-slate-700/80 hover:border-amber-500/50 transition-all shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Pomoc zdalna w 5 minut</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Widzisz każdy ruch kursora na swoim ekranie – <strong class="text-white">120 zł za pierwszą rozpoczętą godz.</strong>, 80 zł za kolejną.
+                    </p>
+                </div>
+
+                <!-- Karta 4 -->
+                <div class="bg-[#1e293b] rounded-2xl p-6 sm:p-7 border border-slate-700/80 hover:border-emerald-500/50 transition-all shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Dojazd i odbiór sprzętu na Śląsku</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        <strong class="text-emerald-400">Mikołów 0 zł</strong>, okolice 30–50 zł lub <strong class="text-white">gratis przy naprawie powyżej 200 zł</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         4. SEKCJA: POMOC ZDALNA W 4 PROSTYCH KROKACH
+    ====================================================================== -->
+    <section id="pomoc-zdalna" class="py-16 sm:py-20 bg-[#1e293b]/40 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-400">Bez wychodzenia z domu</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">Pomoc zdalna w 4 prostych krokach</h2>
+                <p class="text-slate-400 mt-3 text-base sm:text-lg">
+                    Wirusy, wolny Windows, konfiguracja poczty, drukarki lub programów? Rozwiązujemy usterkę przez internet w kilkadziesiąt minut.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <!-- Krok 1 -->
+                <div class="bg-[#1e293b] rounded-2xl p-6 sm:p-7 border border-slate-700/80 shadow-lg">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 font-extrabold text-lg flex items-center justify-center mb-4">1</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Zadzwoń lub napisz na <span data-config="phone-display">512 074 258</span></h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Krótko opisz usterkę telefonicznie, SMS-em lub przez WhatsApp – potwierdzę możliwość naprawy zdalnej i koszt.
+                    </p>
+                </div>
+
+                <!-- Krok 2 -->
+                <div class="bg-[#1e293b] rounded-2xl p-6 sm:p-7 border border-slate-700/80 shadow-lg">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 font-extrabold text-lg flex items-center justify-center mb-4">2</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Pobierz RustDesk / AnyDesk</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Pobierz lekki program do bezpiecznego połączenia zdalnego i uruchom go bez skomplikowanej instalacji.
+                    </p>
+                </div>
+
+                <!-- Krok 3 -->
+                <div class="bg-[#1e293b] rounded-2xl p-6 sm:p-7 border border-slate-700/80 shadow-lg">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 font-extrabold text-lg flex items-center justify-center mb-4">3</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Obserwujesz naprawę na ekranie</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Podajesz jednorazowe hasło i widzisz na żywo każdy mój ruch. Po zamknięciu programu dostęp wygasa.
+                    </p>
+                </div>
+
+                <!-- Krok 4 -->
+                <div class="bg-[#1e293b] rounded-2xl p-6 sm:p-7 border border-slate-700/80 shadow-lg">
+                    <div class="w-10 h-10 rounded-full bg-emerald-500 text-slate-950 font-extrabold text-lg flex items-center justify-center mb-4">4</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Płacisz wygodnie BLIK-iem</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Płacisz wygodnie BLIK-iem na telefon (<span data-config="phone-display">512 074 258</span>) dopiero po rozwiązaniu problemu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pasek pobierania RustDesk / AnyDesk -->
+            <div class="bg-[#1e293b] border border-slate-700 rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl">
+                <div class="space-y-1.5 text-center lg:text-left max-w-2xl">
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Szyfrowane połączenie zdalne</span>
+                    <h3 class="text-xl sm:text-2xl font-extrabold text-white">Pobierz program do pomocy zdalnej</h3>
+                    <p class="text-slate-300 text-sm">
+                        Polecam darmowy i lekki program <strong class="text-white">RustDesk</strong> (lub AnyDesk). Pobierz plik po wcześniejszym uzgodnieniu telefonicznym.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
+                    <a data-config="remote-tool-link" href="https://rustdesk.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-950 font-extrabold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg shadow-orange-500/20 transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span>Pobierz RustDesk</span>
+                    </a>
+                    <a data-config="anydesk-link" href="https://anydesk.com/pl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#0f172a] hover:bg-slate-800 text-slate-200 border border-slate-600 font-bold text-sm sm:text-base px-5 py-3.5 rounded-xl transition-colors">
+                        <span>Alternatywnie: AnyDesk</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. SEKCJA: CENNIK USŁUG (PODZIAŁ NA POMOC ZDALNĄ I SERWIS SPRZĘTOWY)
+    ====================================================================== -->
+    <section id="cennik" class="py-16 sm:py-20 bg-[#0f172a] border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-400">Przejrzyste stawki</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">Cennik usług</h2>
+                <p class="text-slate-400 mt-3 text-base sm:text-lg">
+                    Żadnych dopłat za wieczory czy weekendy. Części zamienne rozliczane są uczciwie <strong class="text-white">po kosztach zakupu</strong> (bez ukrytej marży).
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 items-start">
+                
+                <!-- Kolumna 1: Pomoc Zdalna i System -->
+                <div class="bg-[#1e293b] rounded-2xl border border-emerald-500/30 overflow-hidden shadow-xl">
+                    <div class="bg-emerald-500/10 border-b border-slate-700/80 px-6 py-5 flex items-center justify-between gap-3">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Szybkie wsparcie online</span>
+                            <h3 class="text-xl font-extrabold text-white mt-0.5">Pomoc Zdalna i System</h3>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                            Cała Polska
+                        </span>
+                    </div>
+
+                    <div class="divide-y divide-slate-700/70">
+                        <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <h4 class="font-bold text-white text-base">Pomoc zdalna (usuwanie wirusów, optymalizacja, konfiguracja)</h4>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1">Pierwsza rozpoczęta godzina 120 zł, każda kolejna rozpoczęta godzina 80 zł.</p>
+                            </div>
+                            <div class="sm:text-right shrink-0">
+                                <span class="text-xl font-extrabold text-emerald-400">120 zł/h</span>
+                                <span class="block text-xs text-slate-400">kolejna: 80 zł/h</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <h4 class="font-bold text-white text-base">Instalacja Windows + sterowniki + pakiet startowy</h4>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1">Czysty system Windows 10/11, aktualizacje, sterowniki oraz niezbędne programy.</p>
+                            </div>
+                            <div class="sm:text-right shrink-0">
+                                <span class="text-xl font-extrabold text-white">140 zł</span>
+                                <span class="block text-xs text-slate-400">z kopią danych: 190 zł</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <h4 class="font-bold text-white text-base">Konfiguracja drukarek, skanerów, poczty i sieci Wi-Fi</h4>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1">Rozwiązywanie problemów z drukowaniem, profilami Outlook/Thunderbird i routerem.</p>
+                            </div>
+                            <div class="sm:text-right shrink-0">
+                                <span class="text-xl font-extrabold text-white">120 zł</span>
+                                <span class="block text-xs text-slate-400">zdalnie lub lokalnie</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolumna 2: Serwis Sprzętowy / Składanie PC -->
+                <div class="bg-[#1e293b] rounded-2xl border border-orange-500/30 overflow-hidden shadow-xl">
+                    <div class="bg-orange-500/10 border-b border-slate-700/80 px-6 py-5 flex items-center justify-between gap-3">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Naprawy i modernizacje</span>
+                            <h3 class="text-xl font-extrabold text-white mt-0.5">Serwis Sprzętowy / Składanie PC</h3>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-orange-500/20 text-amber-300 border border-orange-500/30">
+                            Części po kosztach
+                        </span>
+                    </div>
+
+                    <div class="divide-y divide-slate-700/70">
+                        <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <h4 class="font-bold text-white text-base">Diagnoza sprzętu (PC / Laptop)</h4>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1">Dokładna weryfikacja usterki i wycena przed naprawą.</p>
+                            </div>
+                            <div class="sm:text-right shrink-0">
+                                <span class="text-xl font-extrabold text-white">70 zł</span>
+                                <span class="block text-xs font-bold text-emerald-400">0 zł przy naprawie</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <h4 class="font-bold text-white text-base">Czyszczenie laptopa + wymiana pasty / termopadów</h4>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1">Markowa pasta (Arctic MX-6 / PTM7950), czyszczenie radiatora i testy temperatur.</p>
+                            </div>
+                            <div class="sm:text-right shrink-0">
+                                <span class="text-xl font-extrabold text-amber-400">150–180 zł</span>
+                                <span class="block text-xs text-slate-400">gamingowe: 200–240 zł</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <h4 class="font-bold text-white text-base">Wymiana dysku SSD / pamięci RAM / baterii</h4>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1">Montaż podzespołów + opcjonalne klonowanie obecnego systemu (+50 zł).</p>
+                            </div>
+                            <div class="sm:text-right shrink-0">
+                                <span class="text-xl font-extrabold text-white">100–130 zł</span>
+                                <span class="block text-xs text-slate-400">+ koszt części</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <h4 class="font-bold text-white text-base">Naprawa zawiasów / obudowy / klawiatury</h4>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1">Wymiana uszkodzonej obudowy, wyrwanych zawiasów lub zalanej klawiatury.</p>
+                            </div>
+                            <div class="sm:text-right shrink-0">
+                                <span class="text-xl font-extrabold text-white">180–280 zł</span>
+                                <span class="block text-xs text-slate-400">+ koszt części</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <h4 class="font-bold text-white text-base">Złożenie PC od zera + konfiguracja BIOS i testy</h4>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1">Estetyczny montaż, ułożenie przewodów, profil RAM XMP/EXPO i testy obciążeniowe.</p>
+                            </div>
+                            <div class="sm:text-right shrink-0">
+                                <span class="text-xl font-extrabold text-amber-400">250–350 zł</span>
+                                <span class="block text-xs text-slate-400">kompletna usługa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Informacja o rozliczaniu części i dojeździe -->
+            <div class="mt-8 bg-[#1e293b]/80 border border-slate-700/80 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-300">
+                <p>
+                    <strong class="text-white">Uczciwe rozliczenie części i dojazdu:</strong> Części zamienne kupujemy po realnych cenach rynkowych (bez doliczania prowizji). Dojazd / odbiór sprzętu w <strong class="text-emerald-400">Mikołowie: 0 zł</strong>, w miastach ościennych: <strong class="text-white">30–50 zł</strong> (lub <strong class="text-emerald-400">0 zł przy naprawie powyżej 200 zł</strong>).
+                </p>
+                <a href="#kalkulator" class="shrink-0 font-bold text-amber-400 hover:text-amber-300 whitespace-nowrap">Oblicz wycenę poniżej &darr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         6. INTERAKTYWNY KALKULATOR / GENERATOR SZYBKIEGO ZGŁOSZENIA
+    ====================================================================== -->
+    <section id="kalkulator" class="py-16 sm:py-20 bg-[#1e293b]/50 border-b border-slate-800/80 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+                <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-orange-400">Natychmiastowa wycena online</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">Kalkulator i generator zgłoszenia</h2>
+                <p class="text-slate-400 mt-3 text-base">
+                    Wybierz usługę i miejscowość, wpisz krótki opis problemu – od razu zobaczysz szacunkowy koszt i wyślesz gotową wiadomość jednym kliknięciem.
+                </p>
+            </div>
+
+            <div class="bg-[#1e293b] border border-slate-700 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-2xl">
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Lewa kolumna formularza -->
+                    <div class="lg:col-span-7 space-y-5">
+                        
+                        <!-- 1. Rodzaj usługi -->
+                        <div>
+                            <label for="calc-service" class="block text-sm font-bold text-white mb-2">1. Wybierz rodzaj usługi:</label>
+                            <select id="calc-service" onchange="updateCalculator()" class="w-full rounded-xl bg-[#0f172a] border border-slate-600 text-white text-sm sm:text-base px-4 py-3.5 focus:outline-none focus:border-orange-500">
+                                <option value="remote">Pomoc zdalna (120 zł/h, kolejna 80 zł/h)</option>
+                                <option value="diagnosis">Diagnoza sprzętu (70 zł / 0 zł przy naprawie)</option>
+                                <option value="windows">Instalacja Windows + sterowniki (140 zł)</option>
+                                <option value="cleaning">Czyszczenie laptopa + wymiana pasty (150–180 zł)</option>
+                                <option value="upgrade">Wymiana dysku SSD / RAM / baterii (100–130 zł + części)</option>
+                                <option value="mechanical">Naprawa zawiasów / obudowy / klawiatury (180–280 zł + części)</option>
+                                <option value="pcbuild">Złożenie PC od zera (250–350 zł)</option>
+                            </select>
+                        </div>
+
+                        <!-- 2. Miejscowość -->
+                        <div>
+                            <label for="calc-city" class="block text-sm font-bold text-white mb-2">2. Wybierz miejscowość lub tryb zdalny:</label>
+                            <select id="calc-city" onchange="updateCalculator()" class="w-full rounded-xl bg-[#0f172a] border border-slate-600 text-white text-sm sm:text-base px-4 py-3.5 focus:outline-none focus:border-orange-500">
+                                <option value="Mikołów" data-zone="mikolow">Mikołów – dojazd 0 zł</option>
+                                <option value="Pomoc zdalna (cała Polska)" data-zone="remote">Pomoc zdalna cała Polska – 0 zł</option>
+                                <option value="Łaziska Górne" data-zone="silesia">Łaziska Górne – dojazd 30–50 zł (0 zł pow. 200 zł)</option>
+                                <option value="Orzesze" data-zone="silesia">Orzesze – dojazd 30–50 zł (0 zł pow. 200 zł)</option>
+                                <option value="Tychy" data-zone="silesia">Tychy – dojazd 30–50 zł (0 zł pow. 200 zł)</option>
+                                <option value="Katowice" data-zone="silesia">Katowice – dojazd 30–50 zł (0 zł pow. 200 zł)</option>
+                                <option value="Gliwice" data-zone="silesia">Gliwice – dojazd 30–50 zł (0 zł pow. 200 zł)</option>
+                                <option value="Ruda Śląska" data-zone="silesia">Ruda Śląska – dojazd 30–50 zł (0 zł pow. 200 zł)</option>
+                                <option value="Zabrze" data-zone="silesia">Zabrze – dojazd 30–50 zł (0 zł pow. 200 zł)</option>
+                                <option value="Chorzów" data-zone="silesia">Chorzów – dojazd 30–50 zł (0 zł pow. 200 zł)</option>
+                            </select>
+                        </div>
+
+                        <!-- 3. Krótki opis objawów -->
+                        <div>
+                            <label for="calc-symptoms" class="block text-sm font-bold text-white mb-2">3. Krótki opis objawów / model sprzętu (opcjonalnie):</label>
+                            <textarea id="calc-symptoms" rows="3" oninput="updateCalculator()" placeholder="Np. Laptop Lenovo wolno uruchamia system, głośno chodzi wentylator..." class="w-full rounded-xl bg-[#0f172a] border border-slate-600 text-white text-sm sm:text-base px-4 py-3 placeholder-slate-500 focus:outline-none focus:border-orange-500"></textarea>
+                            
+                            <!-- Szybkie podpowiedzi objawów -->
+                            <div class="flex flex-wrap gap-1.5 mt-2">
+                                <button type="button" onclick="appendSymptom('Laptop wolno działa i zacina się')" class="text-xs px-2.5 py-1.5 rounded-lg bg-[#0f172a] hover:bg-slate-800 text-slate-300 border border-slate-700 transition-colors">+ Wolno działa</button>
+                                <button type="button" onclick="appendSymptom('Laptop grzeje się i głośno chodzi')" class="text-xs px-2.5 py-1.5 rounded-lg bg-[#0f172a] hover:bg-slate-800 text-slate-300 border border-slate-700 transition-colors">+ Grzeje się / głośno chodzi</button>
+                                <button type="button" onclick="appendSymptom('Komputer nie uruchamia się')" class="text-xs px-2.5 py-1.5 rounded-lg bg-[#0f172a] hover:bg-slate-800 text-slate-300 border border-slate-700 transition-colors">+ Nie włącza się</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Prawa kolumna: Podsumowanie wyceny i przyciski wysyłki -->
+                    <div class="lg:col-span-5 bg-[#0f172a] border border-slate-700 rounded-2xl p-6 space-y-5">
+                        <div class="border-b border-slate-800 pb-4 space-y-1.5">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Szacunkowa wycena</span>
+                            <div id="calc-price-display" class="text-2xl sm:text-3xl font-extrabold text-white">120 zł / pierwsza godz.</div>
+                            <div id="calc-travel-display" class="text-xs sm:text-sm font-semibold text-amber-300">Dojazd: 0 zł (bezpłatny w Mikołowie)</div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between mb-1.5">
+                                <span class="text-xs font-semibold text-slate-400">Podgląd gotowej wiadomości:</span>
+                                <button type="button" onclick="copyGeneratedMessage()" class="text-xs font-bold text-amber-400 hover:text-amber-300">Kopiuj tekst</button>
+                            </div>
+                            <div id="calc-message-preview" class="bg-[#1e293b]/80 border border-slate-700/80 rounded-xl p-3.5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                                Cześć! Zgłoszenie ze strony: Pomoc zdalna (120 zł/h, kolejna 80 zł/h). Miejscowość: Mikołów. Szacunkowy koszt: 120 zł / pierwsza godz. + dojazd 0 zł. Kiedy mogę zadzwonić lub się połączyć?
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 pt-1">
+                            <button type="button" onclick="openWhatsApp()" class="w-full inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 active:scale-[0.99] text-white font-extrabold text-sm sm:text-base py-3.5 px-5 rounded-xl shadow-lg shadow-emerald-600/20 transition-all">
+                                <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+                                <span>Wyślij przez WhatsApp</span>
+                            </button>
+
+                            <button type="button" onclick="openSMS()" class="w-full inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 active:scale-[0.99] text-slate-950 font-extrabold text-sm sm:text-base py-3.5 px-5 rounded-xl shadow-lg shadow-orange-500/20 transition-all">
+                                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                                <span>Wyślij gotowy SMS</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         7. SEKCJA: OPINIE GOOGLE (5.0 ★), GODZINY PRACY I OBSZAR DZIAŁANIA
+    ====================================================================== -->
+    <section id="godziny-dojazd" class="py-16 sm:py-20 bg-[#0f172a]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-400">Zaufanie i dostępność</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">Opinie Google, godziny pracy i obszar działania</h2>
+                <p class="text-slate-400 mt-3 text-base sm:text-lg">
+                    Sprawdź opinie klientów z regionu, dokładne godziny dyżurów serwisowych oraz listę obsługiwanych miast.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Lewa kolumna (5 kolumn): Tabela Godzin Otwarcia z podświetleniem dziś -->
+                <div class="lg:col-span-5 bg-[#1e293b] rounded-2xl p-6 sm:p-8 border border-slate-700/80 shadow-xl">
+                    <div class="flex items-center justify-between gap-2 pb-4 border-b border-slate-700 mb-5">
+                        <div>
+                            <h3 class="text-xl font-extrabold text-white">Godziny otwarcia</h3>
+                            <p class="text-xs text-slate-400 mt-0.5">Zgodne z profilem Google • Bez dopłat</p>
+                        </div>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                            7 dni w tygodniu
+                        </span>
+                    </div>
+
+                    <div class="overflow-hidden rounded-xl border border-slate-700">
+                        <table class="w-full text-sm text-left">
+                            <tbody id="hours-table-body" class="divide-y divide-slate-700/80">
+                                <tr data-day="1" class="bg-[#0f172a]/50 transition-colors">
+                                    <td class="py-3.5 px-4 font-semibold text-slate-200">Poniedziałek</td>
+                                    <td class="py-3.5 px-4 text-right font-bold text-white">17:00 – 22:00</td>
+                                </tr>
+                                <tr data-day="2" class="bg-[#0f172a]/30 transition-colors">
+                                    <td class="py-3.5 px-4 font-semibold text-slate-200">Wtorek</td>
+                                    <td class="py-3.5 px-4 text-right font-bold text-white">17:00 – 22:00</td>
+                                </tr>
+                                <tr data-day="3" class="bg-[#0f172a]/50 transition-colors">
+                                    <td class="py-3.5 px-4 font-semibold text-slate-200">Środa</td>
+                                    <td class="py-3.5 px-4 text-right font-bold text-white">17:00 – 22:00</td>
+                                </tr>
+                                <tr data-day="4" class="bg-[#0f172a]/30 transition-colors">
+                                    <td class="py-3.5 px-4 font-semibold text-slate-200">Czwartek</td>
+                                    <td class="py-3.5 px-4 text-right font-bold text-white">17:00 – 22:00</td>
+                                </tr>
+                                <tr data-day="5" class="bg-[#0f172a]/50 transition-colors">
+                                    <td class="py-3.5 px-4 font-semibold text-slate-200">Piątek</td>
+                                    <td class="py-3.5 px-4 text-right font-bold text-amber-400">14:00 – 22:00</td>
+                                </tr>
+                                <tr data-day="6" class="bg-[#0f172a]/30 transition-colors">
+                                    <td class="py-3.5 px-4 font-semibold text-slate-200">Sobota</td>
+                                    <td class="py-3.5 px-4 text-right font-bold text-emerald-400">08:00 – 22:00</td>
+                                </tr>
+                                <tr data-day="0" class="bg-[#0f172a]/50 transition-colors">
+                                    <td class="py-3.5 px-4 font-semibold text-slate-200">Niedziela</td>
+                                    <td class="py-3.5 px-4 text-right font-bold text-emerald-400">08:00 – 22:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="text-xs text-slate-400 mt-4 leading-relaxed">
+                        * Poza godzinami dyżuru możesz wysłać SMS lub wiadomość WhatsApp 24/7 na numer <strong class="text-white" data-config="phone-display">512 074 258</strong> – oddzwonię najszybciej jak to możliwe.
+                    </p>
+                </div>
+
+                <!-- Prawa kolumna (7 kolumn): Opinie Google 5.0 + Obszar działania -->
+                <div class="lg:col-span-7 space-y-6">
+                    
+                    <!-- Karta Opinie Google -->
+                    <div class="bg-[#1e293b] rounded-2xl p-6 sm:p-8 border border-slate-700/80 shadow-xl">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700">
+                            <div class="flex items-center gap-4">
+                                <div class="w-16 h-16 rounded-2xl bg-amber-500/15 border border-amber-400/30 flex flex-col items-center justify-center shrink-0">
+                                    <span class="text-2xl font-extrabold text-white leading-none">5.0</span>
+                                    <span class="text-amber-400 text-xs mt-1">★★★★★</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg sm:text-xl font-extrabold text-white">5.0 gwiazdek na Google</h3>
+                                    <p class="text-xs sm:text-sm text-slate-300 mt-0.5">Sprawdzone opinie klientów z Mikołowa i całego Śląska</p>
+                                </div>
+                            </div>
+                            <a data-config="google-reviews-link" href="https://g.page/r/CQN_ZPhkYibGEBM/review" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-950 font-extrabold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md transition-all shrink-0">
+                                <span>Zobacz / dodaj opinię Google</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4 pt-6">
+                            <div class="bg-[#0f172a]/80 rounded-xl p-4 border border-slate-700/70">
+                                <div class="text-amber-400 text-sm mb-1.5">★★★★★</div>
+                                <p class="text-slate-300 text-xs sm:text-sm italic leading-relaxed">
+                                    „Szybka pomoc po godzinach pracy – laptop wyczyszczony, wymieniona bateria i obudowa. Konkretna wycena przed naprawą i świetny kontakt.”
+                                </p>
+                                <span class="block text-xs font-bold text-white mt-2.5">Klient z Mikołowa • Google</span>
+                            </div>
+
+                            <div class="bg-[#0f172a]/80 rounded-xl p-4 border border-slate-700/70">
+                                <div class="text-amber-400 text-sm mb-1.5">★★★★★</div>
+                                <p class="text-slate-300 text-xs sm:text-sm italic leading-relaxed">
+                                    „Złożenie komputera PC z podzespołów oraz konfiguracja systemu. Kable ułożone wzorowo, pełne testy i uczciwa cena.”
+                                </p>
+                                <span class="block text-xs font-bold text-white mt-2.5">Klient ze Śląska • Google</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Karta Obszar Działania -->
+                    <div class="bg-[#1e293b] rounded-2xl p-6 sm:p-8 border border-slate-700/80 shadow-xl space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-extrabold text-white">Obszar działania na Śląsku</h3>
+                                <p class="text-xs text-slate-400">Mikołów: dojazd 0 zł • Okolice: 30–50 zł (0 zł przy naprawie powyżej 200 zł)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-3.5 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 font-bold text-xs sm:text-sm">Mikołów (0 zł)</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-[#0f172a] border border-slate-700 text-slate-200 font-semibold text-xs sm:text-sm">Łaziska Górne</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-[#0f172a] border border-slate-700 text-slate-200 font-semibold text-xs sm:text-sm">Orzesze</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-[#0f172a] border border-slate-700 text-slate-200 font-semibold text-xs sm:text-sm">Katowice</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-[#0f172a] border border-slate-700 text-slate-200 font-semibold text-xs sm:text-sm">Tychy</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-[#0f172a] border border-slate-700 text-slate-200 font-semibold text-xs sm:text-sm">Gliwice</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-[#0f172a] border border-slate-700 text-slate-200 font-semibold text-xs sm:text-sm">Ruda Śląska</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-[#0f172a] border border-slate-700 text-slate-200 font-semibold text-xs sm:text-sm">Zabrze</span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-[#0f172a] border border-slate-700 text-slate-200 font-semibold text-xs sm:text-sm">Chorzów</span>
+                        </div>
+
+                        <p class="text-xs sm:text-sm text-emerald-400 font-semibold pt-1">
+                            + Pomoc zdalna przez internet na terenie całej Polski (0 zł dojazdu).
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         8. STOPKA
+    ====================================================================== -->
+    <footer class="bg-[#090e1a] border-t border-slate-800 pt-12 pb-10 text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-800/80">
+                <div>
+                    <h3 data-config="business-name" class="text-lg font-extrabold text-white">Pogotowie Komputerowe Mikołów – Serwis PC i Laptopów</h3>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">
+                        Szybki serwis komputerowy po godzinach, w weekendy i zdalnie. Płatność BLIK / gotówka po wykonaniu usługi.
+                    </p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <a data-config="phone-link" href="tel:+48512074258" class="inline-flex items-center gap-2 bg-[#1e293b] hover:bg-slate-800 text-white font-bold text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition-colors">
+                        <span>Tel: <span data-config="phone-display">512 074 258</span></span>
+                    </a>
+                    <a data-config="google-reviews-link" href="https://g.page/r/CQN_ZPhkYibGEBM/review" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#1e293b] hover:bg-slate-800 text-amber-400 font-bold text-sm px-4 py-2.5 rounded-xl border border-slate-700 transition-colors">
+                        <span>Opinie Google (5.0 ★)</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+                <p>&copy; <span id="footer-year">2026</span> <span data-config="business-name">Pogotowie Komputerowe Mikołów – Serwis PC i Laptopów</span>.</p>
+                <p>Pn–Czw: 17:00–22:00 • Pt: 14:00–22:00 • Sob–Nd: 08:00–22:00</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         9. PRZYKLEJONY DOLNY PASEK MOBILNY (MOBILE STICKY BAR)
+    ====================================================================== -->
+    <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-[#0f172a]/95 backdrop-blur-md border-t border-slate-800 px-3 py-2.5 shadow-[0_-8px_25px_rgba(0,0,0,0.45)]">
+        <div class="grid grid-cols-2 gap-2.5">
+            <a data-config="phone-link" href="tel:+48512074258" class="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 active:opacity-90 text-slate-950 font-extrabold text-sm py-3.5 px-3 rounded-xl shadow-md">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span>Zadzwoń</span>
+            </a>
+            <a href="#kalkulator" class="flex items-center justify-center gap-2 bg-emerald-600 active:bg-emerald-700 text-white font-extrabold text-sm py-3.5 px-3 rounded-xl shadow-md">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                <span>WhatsApp / SMS</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         POWIADOMIENIE TOAST (ZAMIAST ALERT)
+    ====================================================================== -->
+    <div id="toast-box" class="fixed bottom-24 md:bottom-6 right-4 z-50 transform translate-y-6 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-[#1e293b] text-white text-sm font-bold px-4 py-3 rounded-xl shadow-2xl border border-emerald-500/40 flex items-center gap-2.5">
+            <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <span id="toast-message">Skopiowano!</span>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         SKRYPT KONFIGURACYJNY (CONFIG) I FUNKCJE DYNAMICZNE
+    ====================================================================== -->
+    <script>
+        /**
+         * ===================================================================
+         * 1. KONFIGURACJA STRONY – PODMIEŃ DANE W JEDNYM MIEJSCU
+         * ===================================================================
+         */
+        const CONFIG = {
+            businessName: "Pogotowie Komputerowe Mikołów – Serwis PC i Laptopów",
+            shortName: "Pogotowie Komputerowe Mikołów",
+            subtitle: "Serwis PC i Laptopów • Pomoc Zdalna",
+            phoneDisplay: "512 074 258",
+            phoneInternational: "48512074258",
+            googleReviewsUrl: "https://g.page/r/CQN_ZPhkYibGEBM/review",
+            remoteToolUrl: "https://rustdesk.com/",
+            anydeskUrl: "https://anydesk.com/pl",
+            // Harmonogram pracy: 1 = Poniedziałek ... 6 = Sobota, 0 = Niedziela
+            schedule: {
+                1: { name: "Poniedziałek", open: "17:00", close: "22:00" },
+                2: { name: "Wtorek",       open: "17:00", close: "22:00" },
+                3: { name: "Środa",        open: "17:00", close: "22:00" },
+                4: { name: "Czwartek",     open: "17:00", close: "22:00" },
+                5: { name: "Piątek",       open: "14:00", close: "22:00" },
+                6: { name: "Sobota",       open: "08:00", close: "22:00" },
+                0: { name: "Niedziela",    open: "08:00", close: "22:00" }
+            }
+        };
+
+        /**
+         * Wstrzyknięcie danych z obiektu CONFIG w odpowiednie elementy DOM
+         */
+        function applyConfig() {
+            document.querySelectorAll('[data-config="business-name"]').forEach(el => {
+                el.textContent = CONFIG.businessName;
+            });
+            document.querySelectorAll('[data-config="short-name"]').forEach(el => {
+                el.textContent = CONFIG.shortName;
+            });
+            document.querySelectorAll('[data-config="subtitle"]').forEach(el => {
+                el.textContent = CONFIG.subtitle;
+            });
+            document.querySelectorAll('[data-config="phone-display"]').forEach(el => {
+                el.textContent = CONFIG.phoneDisplay;
+            });
+            document.querySelectorAll('[data-config="phone-link"]').forEach(el => {
+                el.setAttribute('href', `tel:+${CONFIG.phoneInternational}`);
+            });
+            document.querySelectorAll('[data-config="whatsapp-link"]').forEach(el => {
+                el.setAttribute('href', `https://wa.me/${CONFIG.phoneInternational}`);
+            });
+            document.querySelectorAll('[data-config="google-reviews-link"]').forEach(el => {
+                el.setAttribute('href', CONFIG.googleReviewsUrl);
+            });
+            document.querySelectorAll('[data-config="remote-tool-link"]').forEach(el => {
+                el.setAttribute('href', CONFIG.remoteToolUrl);
+            });
+            document.querySelectorAll('[data-config="anydesk-link"]').forEach(el => {
+                el.setAttribute('href', CONFIG.anydeskUrl);
+            });
+
+            const yearEl = document.getElementById('footer-year');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+        }
+
+        /**
+         * ===================================================================
+         * 2. WSKAŹNIK STATUSU NA ŻYWO + PODŚWIETLENIE BIEŻĄCEGO DNIA W TABELI
+         * ===================================================================
+         */
+        function timeToMinutes(hhmm) {
+            const [hours, minutes] = hhmm.split(':').map(Number);
+            return hours * 60 + minutes;
+        }
+
+        function updateLiveAvailability() {
+            const now = new Date();
+            const day = now.getDay();
+            const currentMinutes = now.getHours() * 60 + now.getMinutes();
+            const todayInfo = CONFIG.schedule[day];
+
+            const openMinutes = timeToMinutes(todayInfo.open);
+            const closeMinutes = timeToMinutes(todayInfo.close);
+
+            const badge = document.getElementById('live-status-badge');
+            const dot = document.getElementById('live-status-dot');
+            const textEl = document.getElementById('live-status-text');
+
+            if (currentMinutes >= openMinutes && currentMinutes < closeMinutes) {
+                // Serwis aktualnie czynny
+                if (badge) {
+                    badge.className = "inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1e293b] border border-emerald-500/50 text-xs sm:text-sm font-bold text-white shadow-md";
+                }
+                if (dot) {
+                    dot.innerHTML = `
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    `;
+                }
+                if (textEl) {
+                    textEl.textContent = `Dostępny teraz – zadzwoń (${CONFIG.phoneDisplay})`;
+                }
+            } else if (currentMinutes < openMinutes) {
+                // Przed dzisiejszym otwarciem
+                if (badge) {
+                    badge.className = "inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1e293b] border border-amber-500/40 text-xs sm:text-sm font-bold text-white shadow-md";
+                }
+                if (dot) {
+                    dot.innerHTML = `<span class="relative inline-flex rounded-full h-3 w-3 bg-amber-400"></span>`;
+                }
+                if (textEl) {
+                    textEl.textContent = `Dostępny dziś od ${todayInfo.open} – wyślij SMS/WhatsApp 24/7`;
+                }
+            } else {
+                // Po dzisiejszym zamknięciu -> szukamy jutrzejszego otwarcia
+                const tomorrowDay = (day + 1) % 7;
+                const tomorrowInfo = CONFIG.schedule[tomorrowDay];
+                if (badge) {
+                    badge.className = "inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1e293b] border border-amber-500/40 text-xs sm:text-sm font-bold text-white shadow-md";
+                }
+                if (dot) {
+                    dot.innerHTML = `<span class="relative inline-flex rounded-full h-3 w-3 bg-amber-400"></span>`;
+                }
+                if (textEl) {
+                    textEl.textContent = `Dostępny jutro (${tomorrowInfo.name}) od ${tomorrowInfo.open} – SMS/WhatsApp 24/7`;
+                }
+            }
+
+            // Automatyczne podświetlenie bieżącego dnia tygodnia w tabeli godzin otwarcia
+            document.querySelectorAll('#hours-table-body tr').forEach(row => {
+                const rowDay = Number(row.getAttribute('data-day'));
+                const dayCell = row.querySelector('td');
+                if (rowDay === day) {
+                    row.classList.add('bg-emerald-500/10', 'border-l-4', 'border-emerald-400');
+                    if (dayCell && !dayCell.querySelector('.today-pill')) {
+                        dayCell.innerHTML += ' <span class="today-pill ml-2 inline-flex items-center px-2 py-0.5 rounded text-[11px] font-extrabold bg-emerald-500 text-slate-950">Dzisiaj</span>';
+                    }
+                }
+            });
+        }
+
+        /**
+         * ===================================================================
+         * 3. INTERAKTYWNY KALKULATOR I GENERATOR ZGŁOSZEŃ (WHATSAPP / SMS)
+         * ===================================================================
+         */
+        const SERVICE_PRICING = {
+            remote: {
+                label: "Pomoc zdalna 120 zł/h",
+                priceText: "120 zł / pierwsza godz. (kolejna 80 zł/h)",
+                over200: false,
+                isRemoteService: true
+            },
+            diagnosis: {
+                label: "Diagnoza sprzętu (70 zł / 0 zł przy naprawie)",
+                priceText: "70 zł (0 zł przy realizacji naprawy)",
+                over200: false,
+                isRemoteService: false
+            },
+            windows: {
+                label: "Instalacja Windows + sterowniki (140 zł)",
+                priceText: "140 zł (z kopią danych: 190 zł)",
+                over200: false,
+                isRemoteService: false
+            },
+            cleaning: {
+                label: "Czyszczenie laptopa + wymiana pasty (150–180 zł)",
+                priceText: "150–180 zł (gamingowe: 200–240 zł)",
+                over200: false,
+                isRemoteService: false
+            },
+            upgrade: {
+                label: "Wymiana dysku SSD / RAM / baterii (100–130 zł + części)",
+                priceText: "100–130 zł + koszt części (klonowanie: +50 zł)",
+                over200: false,
+                isRemoteService: false
+            },
+            mechanical: {
+                label: "Naprawa zawiasów / obudowy / klawiatury (180–280 zł + części)",
+                priceText: "180–280 zł + koszt części",
+                over200: true,
+                isRemoteService: false
+            },
+            pcbuild: {
+                label: "Złożenie PC od zera (250–350 zł)",
+                priceText: "250–350 zł",
+                over200: true,
+                isRemoteService: false
+            }
+        };
+
+        function appendSymptom(snippet) {
+            const textarea = document.getElementById('calc-symptoms');
+            if (!textarea) return;
+            const current = textarea.value.trim();
+            if (!current) {
+                textarea.value = snippet;
+            } else if (!current.includes(snippet)) {
+                textarea.value = `${current}; ${snippet}`;
+            }
+            updateCalculator();
+        }
+
+        function buildMessageData() {
+            const serviceKey = document.getElementById('calc-service')?.value || 'remote';
+            const citySelect = document.getElementById('calc-city');
+            const cityName = citySelect?.value || 'Mikołów';
+            const cityZone = citySelect?.options[citySelect.selectedIndex]?.getAttribute('data-zone') || 'mikolow';
+            const symptoms = document.getElementById('calc-symptoms')?.value.trim() || '';
+
+            const serviceObj = SERVICE_PRICING[serviceKey] || SERVICE_PRICING.remote;
+
+            // Wyliczenie kosztu dojazdu
+            let travelText = "";
+            if (serviceObj.isRemoteService || cityZone === 'remote') {
+                travelText = "0 zł (połączenie zdalne przez internet)";
+            } else if (cityZone === 'mikolow') {
+                travelText = "0 zł (bezpłatny dojazd w Mikołowie)";
+            } else if (serviceObj.over200) {
+                travelText = `0 zł (gratis przy usłudze powyżej 200 zł w ${cityName})`;
+            } else {
+                travelText = `30–50 zł (0 zł przy naprawie powyżej 200 zł)`;
+            }
+
+            const priceEl = document.getElementById('calc-price-display');
+            const travelEl = document.getElementById('calc-travel-display');
+            if (priceEl) priceEl.textContent = serviceObj.priceText;
+            if (travelEl) travelEl.textContent = `Dojazd: ${travelText}`;
+
+            let message = `Cześć! Zgłoszenie ze strony: ${serviceObj.label}. Miejscowość: ${cityName}.`;
+            if (symptoms) {
+                message += ` Objawy / sprzęt: ${symptoms}.`;
+            }
+            message += ` Szacunkowa wycena: ${serviceObj.priceText} (dojazd: ${travelText}). Kiedy mogę zadzwonić lub się umówić?`;
+
+            const previewEl = document.getElementById('calc-message-preview');
+            if (previewEl) previewEl.textContent = message;
+
+            return message;
+        }
+
+        function updateCalculator() {
+            buildMessageData();
+        }
+
+        function openWhatsApp() {
+            const msg = encodeURIComponent(buildMessageData());
+            window.open(`https://wa.me/${CONFIG.phoneInternational}?text=${msg}`, '_blank', 'noopener,noreferrer');
+        }
+
+        function openSMS() {
+            const msg = encodeURIComponent(buildMessageData());
+            window.location.href = `sms:+${CONFIG.phoneInternational}?body=${msg}`;
+        }
+
+        /**
+         * ===================================================================
+         * 4. KOPIOWANIE DO SCHOWKA (EXEC_COMMAND) + POWIADOMIENIE TOAST
+         * ===================================================================
+         */
+        let toastTimer;
+        function showToast(text) {
+            const box = document.getElementById('toast-box');
+            const msg = document.getElementById('toast-message');
+            if (!box || !msg) return;
+
+            msg.textContent = text;
+            box.classList.remove('translate-y-6', 'opacity-0');
+            box.classList.add('translate-y-0', 'opacity-100');
+
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                box.classList.remove('translate-y-0', 'opacity-100');
+                box.classList.add('translate-y-6', 'opacity-0');
+            }, 3000);
+        }
+
+        function copyTextToClipboard(text, successLabel) {
+            const temp = document.createElement('textarea');
+            temp.value = text;
+            temp.style.position = 'fixed';
+            temp.style.opacity = '0';
+            document.body.appendChild(temp);
+            temp.select();
+            try {
+                document.execCommand('copy');
+                showToast(successLabel);
+            } catch (e) {
+                showToast('Nie udało się skopiować.');
+            }
+            document.body.removeChild(temp);
+        }
+
+        function copyPhoneNumber() {
+            copyTextToClipboard(CONFIG.phoneDisplay, `Skopiowano numer: ${CONFIG.phoneDisplay}`);
+        }
+
+        function copyGeneratedMessage() {
+            copyTextToClipboard(buildMessageData(), 'Skopiowano treść zgłoszenia!');
+        }
+
+        /**
+         * Inicjalizacja aplikacji po załadowaniu DOM
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            applyConfig();
+            updateLiveAvailability();
+            updateCalculator();
+            setInterval(updateLiveAvailability, 60000);
+
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
